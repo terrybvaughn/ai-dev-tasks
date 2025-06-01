@@ -3,6 +3,7 @@ description:
 globs:
 alwaysApply: false
 ---
+
 # Rule: Generating a Product Requirements Document (PRD)
 
 ## Goal
@@ -20,11 +21,13 @@ To guide an AI assistant in creating a detailed Product Requirements Document (P
 
 The AI should adapt its questions based on the prompt, but here are some common areas to explore:
 
-*   **Problem/Goal:** "What problem does this feature solve for the user?" or "What is the main goal we want to achieve with this feature?"
+*   **Overview & Problem:** "What problem does this feature solve?" If the initial prompt lacked clarity, ask, "Can you provide a brief summary of the feature?" 
 *   **Target User:** "Who is the primary user of this feature?"
+*   **Goals & Success Metrics:** "What is the main goal or business outcome we want to achieve with this feature?" and "How will success be measured (OKRs, KPIs, etc.)?"
+*   **Assumptions:** "What must be true for this feature to succeed?" If the problem is not well-defined, lean in with questions like: "Does a real, painful problem for this solution exist?" or "Is the pain frequent / severe enough to motivate change?
 *   **Core Functionality:** "Can you describe the key actions a user should be able to perform with this feature?"
-*   **User Stories:** "Could you provide a few user stories? (e.g., As a [type of user], I want to [perform an action] so that [benefit].)"
-*   **Acceptance Criteria:** "How will we know when this feature is successfully implemented? What are the key success criteria?"
+*   **Stories:** "Could you provide a few user or job stories? Job story format: When [situation], I want to [motivation], so I can [outcome]."
+*   **Acceptance Criteria:** If more than one story has been provided, FOR EACH STORY, ask questions like, "How will we know when this feature is successfully implemented? What are the key success criteria?"
 *   **Scope/Boundaries:** "Are there any specific things this feature *should not* do (non-goals)?"
 *   **Data Requirements:** "What kind of data does this feature need to display or manipulate?"
 *   **Design/UI:** "Are there any existing design mockups or UI guidelines to follow?" or "Can you describe the desired look and feel?"
@@ -32,17 +35,18 @@ The AI should adapt its questions based on the prompt, but here are some common 
 
 ## PRD Structure
 
-The generated PRD should include the following sections:
+The generated PRD should include the following sections. Only include the sections noted as (Optional) if they are applicable.
 
-1.  **Introduction/Overview:** Briefly describe the feature and the problem it solves. State the goal.
+1.  **Introduction:** Briefly describe the feature and the problem it solves.
 2.  **Goals:** List the specific, measurable objectives for this feature.
-3.  **User Stories:** Detail the user narratives describing feature usage and benefits.
-4.  **Functional Requirements:** List the specific functionalities the feature must have. Use clear, concise language (e.g., "The system must allow users to upload a profile picture."). Number these requirements.
-5.  **Non-Goals (Out of Scope):** Clearly state what this feature will *not* include to manage scope.
-6.  **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
-7.  **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
-8.  **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
-9.  **Open Questions:** List any remaining questions or areas needing further clarification.
+3.  **Stories:** Detail the user jobs following the "job story" convention to describe the situation, motivation and desired outcome. If there are multiple stories, number the stories. For each story, generate Acceptance Criteria and Dependencies (if applicable). 
+4.  **Data Requirements (Optional):** Describe the data that will need to be consumed and/or mapped for this feature to work. Only include this section if applicable.
+5.  **Intentionally Excluded:** Explicitly excluded behaviors or conditions that may seem like they should be included.
+6.  **Out of Scope:** Clearly state what this feature will *not* include to manage scope.
+7.  **Design Considerations (Optional):** Link to mockups, describe UI/UX requirements, or mention relevant components/styles if applicable.
+8.  **Technical Considerations (Optional):** Mention any known technical constraints, dependencies, or suggestions (e.g., "Should integrate with the existing Auth module").
+9.  **Success Metrics:** How will the success of this feature be measured? (e.g., "Increase user engagement by 10%", "Reduce support tickets related to X").
+10.  **Open Questions:** List any remaining questions or areas needing further clarification.
 
 ## Target Audience
 
@@ -59,3 +63,4 @@ Assume the primary reader of the PRD is a **junior developer**. Therefore, requi
 1. Do NOT start implementing the PRD
 2. Make sure to ask the user clarifying questions
 3. Take the user's answers to the clarifying questions and improve the PRD
+
